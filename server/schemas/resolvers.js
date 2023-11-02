@@ -8,8 +8,8 @@ const resolvers = {
         book: async () => {
             return Book.find({});
         },
-        user: async () => {
-            return User.find({})
+        user: async (parent, { userId }) => {
+            return User.findOne({ _id: userId })
         }
     },
     Mutation: {
